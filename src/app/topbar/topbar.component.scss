@@ -1,0 +1,15 @@
+@import "variables";
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 9px 0 80px 0;
+  color: $white;
+
+  &__greeting {
+    font-size: 24px;
+    font-weight: 500;
+    color: $white;
+  }
+}
