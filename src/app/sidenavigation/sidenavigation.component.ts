@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidenavigation.component.scss'],
 })
 export class SidenavigationComponent implements OnInit {
-  constructor() {}
+  title: string;
+  constructor() {
+    this.title = 'DRINKIFY';
+  }
 
   ngOnInit(): void {}
 }

@@ -1,0 +1,13 @@
+.search {
+  display: flex;
+  justify-content: center;
+
+  &__bar {
+    display: flex;
+    width: 60%;
+
+    input {
+      margin-right: 20px;
+    }
+  }
+}
