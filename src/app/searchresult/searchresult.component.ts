@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+interface Drink {
+  strDrink: string;
+  strDrinkThumb: string;
+}
 
 @Component({
-  selector: 'app-searchresult',
+  selector: 'searchresult',
   templateUrl: './searchresult.component.html',
   styleUrls: ['./searchresult.component.scss']
 })
+
 export class SearchresultComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+ @Input() drinks = [] as Array<Drink>; 
+  
+  ngOnInit(): void {}
 }
