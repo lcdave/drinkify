@@ -7,8 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'drinkify';
-
-  emitTest(newItem: string) {
-    console.log('emitTest: ', newItem);
-  }
 }
