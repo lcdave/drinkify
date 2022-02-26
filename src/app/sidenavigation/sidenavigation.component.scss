@@ -24,6 +24,12 @@
     a {
       text-decoration: none;
       color: $white;
+      display: block;
+      text-align: center;
+
+      &:hover {
+        color: $green;
+      }
     }
 
     ul {

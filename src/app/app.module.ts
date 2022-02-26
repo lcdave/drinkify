@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidenavigationComponent } from './sidenavigation/sidenavigation.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { SearchfieldComponent } from './searchfield/searchfield.component';
 import { SearchresultComponent } from './searchresult/searchresult.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,8 +16,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     TopbarComponent,
     SearchfieldComponent,
     SearchresultComponent,
+    routingComponents,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FontAwesomeModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
