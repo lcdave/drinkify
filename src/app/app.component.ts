@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 
+interface Drink {
+  strDrink: string;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,8 +11,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'drinkify';
+  drinks = [] as Drink[];
+  
 
-  emitTest(newItem: string) {
-    console.log('emitTest: ', newItem);
+  emitTest(newItem: Array<Drink>) {
+    this.drinks = newItem;
   }
 }

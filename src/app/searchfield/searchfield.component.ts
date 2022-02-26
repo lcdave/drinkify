@@ -15,7 +15,7 @@ export class SearchfieldComponent implements OnInit {
   apiURL: String;
   drinks: Array<Drink>;
 
-  @Output() newItemEvent = new EventEmitter<string>();
+  @Output() newItemEvent = new EventEmitter<Array<Drink>>();
 
   constructor() {
     this.name = new FormControl('');
@@ -26,7 +26,11 @@ export class SearchfieldComponent implements OnInit {
   ngOnInit(): void {}
   onButtonClick() {
     let apiURLWithSearchString = this.apiURL + this.name.value;
-    fetch(apiURLWithSearchString).then((response) => {
+
+    this.setDrinks(apiURLWithSearchString);
+  }
+  async setDrinks(url: string) {
+     await fetch(url).then((response) => {
       if (response.status !== 200) {
         console.log(
           'Looks like there was a problem. Status Code: ' + response.status
@@ -35,9 +39,8 @@ export class SearchfieldComponent implements OnInit {
       }
       response.json().then((data) => {
         this.drinks = data.drinks;
+        this.newItemEvent.emit(this.drinks);
       });
     });
-
-    this.newItemEvent.emit('test');
   }
 }
