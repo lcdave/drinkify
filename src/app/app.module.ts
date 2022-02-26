@@ -9,6 +9,7 @@ import { SearchfieldComponent } from './searchfield/searchfield.component';
 import { SearchresultComponent } from './searchresult/searchresult.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SearchComponent } from './search/search.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +18,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SearchfieldComponent,
     SearchresultComponent,
     routingComponents,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

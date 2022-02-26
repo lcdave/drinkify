@@ -1,9 +1,6 @@
 import { Output, Component, OnInit, EventEmitter } from '@angular/core';
 import { FormControl } from '@angular/forms';
-
-interface Drink {
-  strDrink: string;
-}
+import { DrinkInterface } from '../../interfaces/Drink';
 
 @Component({
   selector: 'searchfield',
@@ -13,9 +10,9 @@ interface Drink {
 export class SearchfieldComponent implements OnInit {
   name: FormControl;
   apiURL: String;
-  drinks: Array<Drink>;
+  drinks: Array<DrinkInterface>;
 
-  @Output() newItemEvent = new EventEmitter<Array<Drink>>();
+  @Output() newDrinksEvent = new EventEmitter<Array<DrinkInterface>>();
 
   constructor() {
     this.name = new FormControl('');
@@ -26,11 +23,10 @@ export class SearchfieldComponent implements OnInit {
   ngOnInit(): void {}
   onButtonClick() {
     let apiURLWithSearchString = this.apiURL + this.name.value;
-
     this.setDrinks(apiURLWithSearchString);
   }
   async setDrinks(url: string) {
-     await fetch(url).then((response) => {
+    await fetch(url).then((response) => {
       if (response.status !== 200) {
         console.log(
           'Looks like there was a problem. Status Code: ' + response.status
@@ -39,7 +35,7 @@ export class SearchfieldComponent implements OnInit {
       }
       response.json().then((data) => {
         this.drinks = data.drinks;
-        this.newItemEvent.emit(this.drinks);
+        this.newDrinksEvent.emit(this.drinks);
       });
     });
   }
