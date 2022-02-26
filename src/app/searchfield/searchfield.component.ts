@@ -26,7 +26,6 @@ export class SearchfieldComponent implements OnInit {
   ngOnInit(): void {}
   onButtonClick() {
     let apiURLWithSearchString = this.apiURL + this.name.value;
-    this.newItemEvent.emit('blub');
     fetch(apiURLWithSearchString).then((response) => {
       if (response.status !== 200) {
         console.log(
@@ -38,5 +37,7 @@ export class SearchfieldComponent implements OnInit {
         this.drinks = data.drinks;
       });
     });
+
+    this.newItemEvent.emit('test');
   }
 }
