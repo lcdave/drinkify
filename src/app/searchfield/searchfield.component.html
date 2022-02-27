@@ -1,7 +1,6 @@
 
     <div class="search">
-        <div class="search__bar">
-            <input class="input" type="text" placeholder="Please enter the drink's name..." [formControl]="name"  >
-            <button class="button is-primary" (click)="onButtonClick()">Search</button>
+        <div class="search__bar" ng-app="searchfieldApp" ng-controller="serchfieldCtrl">
+            <input class="input" type="text" placeholder="Please enter the drink's name..." [formControl]="name" >
         </div>
     </div>
