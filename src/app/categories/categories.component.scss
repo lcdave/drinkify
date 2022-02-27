@@ -1,0 +1,31 @@
+@import "variables";
+
+.categories {
+  &__section {
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid $grey-light;
+      width: 800px;
+      padding: 20px 0;
+      align-items: center;
+
+      &-col {
+        flex: 1;
+
+        &--title {
+          font-weight: $weight-bold;
+          color: $green;
+        }
+
+        &--placeholder {
+          visibility: hidden;
+        }
+
+        &:last-child {
+          flex: none;
+        }
+      }
+    }
+  }
+}
