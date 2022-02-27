@@ -1,6 +1,8 @@
 import { Output, Component, OnInit, EventEmitter } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { debounceTime } from 'rxjs';
 import { DrinkInterface } from '../../interfaces/Drink';
+
 
 @Component({
   selector: 'searchfield',
@@ -18,13 +20,25 @@ export class SearchfieldComponent implements OnInit {
     this.name = new FormControl('');
     this.apiURL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
     this.drinks = [];
+    this.name.valueChanges.pipe(debounceTime(1000)).subscribe(res=>{
+      console.log(this.name.value);
+      if(this.name.value!="") {
+        let apiURLWithSearchString = this.apiURL + this.name.value;
+        this.setDrinks(apiURLWithSearchString);
+      }
+      else {
+        console.log("entering else")
+        this.drinks = [];
+        this.newDrinksEvent.emit(this.drinks);
+      }
+    })
   }
-
+  
   ngOnInit(): void {}
-  onButtonClick() {
-    let apiURLWithSearchString = this.apiURL + this.name.value;
-    this.setDrinks(apiURLWithSearchString);
-  }
+
+    
+  
+ 
   async setDrinks(url: string) {
     await fetch(url).then((response) => {
       if (response.status !== 200) {

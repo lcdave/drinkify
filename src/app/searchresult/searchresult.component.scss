@@ -1,0 +1,29 @@
+@import "variables";
+
+.results {
+  width: 70%;
+  margin: 0 auto;
+
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+
+      &-name-with-image {
+        display: flex;
+        align-items: center;
+      }
+
+      &-name {
+          color: $white;
+      }
+
+      &-image{
+        border-radius: 50%;
+        width:70px;
+        height:70px;
+        margin-right: 20px;
+    }
+  }
+}
