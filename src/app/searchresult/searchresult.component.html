@@ -1,10 +1,13 @@
 <div class="results" *ngIf="drinks.length > 0">
     <div class="results__item" *ngFor="let drink of drinks">
-        <div class="results__item-image">
-            <!--<img src="{{drink.strDrinkThumb}}" alt="{{drink.strDrink}}">-->
+        <div class="results__item-name-with-image">
+           <img class="results__item-image" src="{{drink.strDrinkThumb}}" alt="{{drink.strDrink}}">
+           <div class="results__item-name">
+                <p>{{drink.strDrink}}</p>
+            </div>
         </div>
-        <div class="results__item-name">
-            {{drink.strDrink}}
+        <div class="results__item-cta">
+            <button class="button is-primary">See recipe</button>
         </div>
     </div>
 </div>
