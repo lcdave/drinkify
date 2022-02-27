@@ -1,1 +1,27 @@
-<p>categories works!</p>
+<div class="categories">
+    <div class="categories__section">
+        <div class="categories__section-title">
+            <h2 class="title is-2">Categories</h2>
+        </div>
+        <div class="categories__section__items">
+            <div class="categories__section__item">
+                <div class="categories__section__item-col--title">Name</div>
+                <div class="categories__section__item-col--title">Subcategory</div>
+                <div class="categories__section__item-col--title categories__section__item-col--placeholder">
+                    <button class="button is-primary">Show drinks</button>
+                </div>
+            </div>
+            <div class="categories__section__item" *ngFor="let category of categories">
+                <div class="categories__section__item-col">
+                    {{category.strCategory}}
+                </div>
+                <div class="categories__section__item-col">
+                    Types
+                </div>
+                <div class="categories__section__item-col">
+                    <button class="button is-primary" (click)="onShowDrinksClick(category.strCategory, 'types')">Show drinks</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
