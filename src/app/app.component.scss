@@ -1,18 +1,8 @@
 @import "variables";
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  background: $green-grey;
-}
-
 main {
   margin-left: 112px;
   padding: 16px 56px;
   background-color: $green-grey;
-  height: 100vh;
+  min-height: 100vh;
 }
