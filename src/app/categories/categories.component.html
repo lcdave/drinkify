@@ -3,25 +3,26 @@
         <div class="categories__section-title">
             <h2 class="title is-2">Categories</h2>
         </div>
+        <div class="categories__select select">
+            <select name="subcategories" (change)="onFilterChange($event)">
+                <option value="">Choose a subcategory</option>
+                <option value="c">Type</option>
+                <option value="g">Glass</option>
+                <option value="i">Ingredient</option>
+                <option value="a">Alcoholic</option>
+          </select>
+        </div>
         <div class="categories__section__items">
-            <div class="categories__section__item">
-                <div class="categories__section__item-col--title">Name</div>
-                <div class="categories__section__item-col--title">Subcategory</div>
-                <div class="categories__section__item-col--title categories__section__item-col--placeholder">
-                    <button class="button is-primary">Show drinks</button>
-                </div>
-            </div>
-            <div class="categories__section__item" *ngFor="let category of categories">
+            <div class="categories__section__item" *ngFor="let category of filteredCategories | paginate: { itemsPerPage: 20, currentPage: p }" 
+            (click)="onShowDrinksClick(category.name, category.subcategoryKey)">
                 <div class="categories__section__item-col">
-                    {{category.strCategory}}
+                    {{category.name}}
                 </div>
                 <div class="categories__section__item-col">
-                    Types
-                </div>
-                <div class="categories__section__item-col">
-                    <button class="button is-primary" (click)="onShowDrinksClick(category.strCategory, 'types')">Show drinks</button>
+                    <span class="tag is-light">{{category.subcategoryName}}</span>
                 </div>
             </div>
         </div>
     </div>
+    <pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls>
 </div>

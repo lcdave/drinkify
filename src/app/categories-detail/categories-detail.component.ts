@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CategoryDrinkInterface } from '../../interfaces/CategoryDrink';
+import { faLongArrowAltLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'categories-detail',
@@ -12,10 +13,12 @@ export class CategoriesDetailComponent implements OnInit {
   name = '' as string | null;
   drinks = [] as CategoryDrinkInterface[];
   p: number = 1;
+  faLongArrowAltLeft: any;
 
   constructor(private router: Router, private route: ActivatedRoute) {
     this.subcategory = this.route.snapshot.paramMap.get('subcategory');
     this.name = this.route.snapshot.paramMap.get('name');
+    this.faLongArrowAltLeft = faLongArrowAltLeft;
   }
 
   async ngOnInit(): Promise<void> {
@@ -23,13 +26,8 @@ export class CategoriesDetailComponent implements OnInit {
   }
 
   async getDrinksByCategory(): Promise<CategoryDrinkInterface[]> {
-    let apiURL = '';
-
     // TODO(davide): snailcase name before concat
-    switch (this.subcategory) {
-      case 'types':
-        apiURL = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${this.name}`;
-    }
+    let apiURL = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?${this.subcategory}=${this.name}`;
 
     const response = await fetch(apiURL);
     const data = await response.json();

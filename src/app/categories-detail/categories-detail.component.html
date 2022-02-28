@@ -1,5 +1,11 @@
 <div class="categories-details">
     <h2 class="title is-2">{{name}}</h2>
+    <div class="back-link">
+        <a routerLink="/categories" routerLinkActive="active">
+            <fa-icon [icon]="faLongArrowAltLeft"></fa-icon>
+            Back
+        </a>
+    </div>
     <div class="drinks-list">
         <div class="drinks-list__item" *ngFor="let drink of drinks | paginate: { itemsPerPage: 15, currentPage: p }">
             <div class="drinks-list__item-image">
