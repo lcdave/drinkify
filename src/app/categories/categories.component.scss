@@ -2,13 +2,39 @@
 
 .categories {
   &__section {
+    &__items {
+      background-color: $green-medium;
+      margin-bottom: 20px;
+      border-radius: 13px;
+      cursor: pointer;
+    }
+
     &__item {
       display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid $grey-light;
-      width: 800px;
-      padding: 20px 0;
-      align-items: center;
+      border-bottom: 1px solid $grey-medium;
+      padding: 10px 15px;
+
+      &:first-child {
+        &:hover {
+          border-top-left-radius: 13px;
+          border-top-right-radius: 13px;
+        }
+      }
+
+      &:last-child {
+        &:hover {
+          border-bottom-left-radius: 13px;
+          border-bottom-right-radius: 13px;
+        }
+      }
+
+      &:hover {
+        background-color: $green-darkest;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
 
       &-col {
         flex: 1;
@@ -27,5 +53,9 @@
         }
       }
     }
+  }
+
+  &__select {
+    margin-bottom: 20px;
   }
 }

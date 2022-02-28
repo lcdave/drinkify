@@ -1,6 +1,23 @@
 @import "variables";
 
 .categories-details {
+  .back-link {
+    a {
+      display: block;
+      color: $white;
+      font-size: 16px;
+      margin-bottom: 30px;
+
+      &:hover {
+        color: $green;
+      }
+
+      .ng-fa-icon {
+        margin-right: 10px;
+      }
+    }
+  }
+
   .drinks-list {
     display: flex;
     flex-flow: row;
