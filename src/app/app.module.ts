@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SearchComponent } from './search/search.component';
 import { CategoriesDetailComponent } from './categories-detail/categories-detail.component';
+import { DrinkDetailComponent } from './drink-detail/drink-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,7 @@ import { CategoriesDetailComponent } from './categories-detail/categories-detail
     routingComponents,
     SearchComponent,
     CategoriesDetailComponent,
+    DrinkDetailComponent,
   ],
   imports: [
     BrowserModule,
