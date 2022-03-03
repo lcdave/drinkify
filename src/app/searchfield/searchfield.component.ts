@@ -21,13 +21,11 @@ export class SearchfieldComponent implements OnInit {
     this.apiURL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
     this.drinks = [];
     this.name.valueChanges.pipe(debounceTime(1000)).subscribe(res=>{
-      console.log(this.name.value);
       if(this.name.value!="") {
         let apiURLWithSearchString = this.apiURL + this.name.value;
         this.setDrinks(apiURLWithSearchString);
       }
       else {
-        console.log("entering else")
         this.drinks = [];
         this.newDrinksEvent.emit(this.drinks);
       }
