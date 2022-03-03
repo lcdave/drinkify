@@ -1,0 +1,30 @@
+@import "variables";
+
+.button {
+  padding: 5px 17px;
+  border-radius: 20px;
+  border: none;
+
+  &:hover {
+    background-color: $grey-lightest;
+    color: $white;
+  }
+
+  &.is-primary {
+    border: none;
+
+    &:focus {
+      border: none;
+      box-shadow: none !important;
+    }
+
+    &:hover {
+      background-color: $green-darkest;
+      color: $white;
+    }
+  }
+}
+
+.tag {
+  font-size: 13px !important;
+}

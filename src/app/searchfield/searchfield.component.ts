@@ -1,8 +1,9 @@
-import { Output, Component, OnInit, EventEmitter } from '@angular/core';
+import { Output, Component, OnInit, EventEmitter, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs';
 import { DrinkInterface } from '../../interfaces/Drink';
-
+import { SearchResultInterface } from './../../interfaces/SearchResult';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'searchfield',
@@ -12,31 +13,39 @@ import { DrinkInterface } from '../../interfaces/Drink';
 export class SearchfieldComponent implements OnInit {
   name: FormControl;
   apiURL: String;
+  searchResult: SearchResultInterface;
   drinks: Array<DrinkInterface>;
+  inputClass: String;
+  faSearch: any;
 
-  @Output() newDrinksEvent = new EventEmitter<Array<DrinkInterface>>();
+  @Output() newDrinksEvent = new EventEmitter<SearchResultInterface>();
 
   constructor() {
     this.name = new FormControl('');
     this.apiURL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
+    this.searchResult = {
+      done: false,
+      drinks: [],
+    };
     this.drinks = [];
-    this.name.valueChanges.pipe(debounceTime(1000)).subscribe(res=>{
-      if(this.name.value!="") {
+    this.inputClass = 'input';
+    this.faSearch = faSearch;
+
+    this.name.valueChanges.pipe(debounceTime(200)).subscribe((res) => {
+      if (this.name.value != '') {
         let apiURLWithSearchString = this.apiURL + this.name.value;
         this.setDrinks(apiURLWithSearchString);
+      } else {
+        this.searchResult.drinks = [];
+        this.searchResult.done = false;
+        this.newDrinksEvent.emit(this.searchResult);
+        this.inputClass = 'input';
       }
-      else {
-        this.drinks = [];
-        this.newDrinksEvent.emit(this.drinks);
-      }
-    })
+    });
   }
-  
+
   ngOnInit(): void {}
 
-    
-  
- 
   async setDrinks(url: string) {
     await fetch(url).then((response) => {
       if (response.status !== 200) {
@@ -46,8 +55,12 @@ export class SearchfieldComponent implements OnInit {
         return;
       }
       response.json().then((data) => {
-        this.drinks = data.drinks;
-        this.newDrinksEvent.emit(this.drinks);
+        this.searchResult = {
+          done: true,
+          drinks: data.drinks,
+        };
+        this.newDrinksEvent.emit(this.searchResult);
+        this.inputClass = 'input has-result';
       });
     });
   }

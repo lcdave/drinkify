@@ -1,25 +1,49 @@
 <div class="categories">
-    <div class="categories__section">
-        <div class="categories__section-title">
+    <div class="container">
+        <div class="categories__title">
             <h2 class="title is-2">Categories</h2>
         </div>
-        <div class="categories__select select">
-            <select name="subcategories" (change)="onFilterChange($event)">
-                <option value="">Choose a subcategory</option>
-                <option value="c">Type</option>
-                <option value="g">Glass</option>
-                <option value="i">Ingredient</option>
-                <option value="a">Alcoholic</option>
-          </select>
+        <div class="categories__filter columns">
+            <div class="column is-2">
+                <div class="categories__select">
+                    <div class="categories__select-label">Subcategory</div>
+                    <div class="select is-rounded">
+                        <select name="subcategories" (change)="onFilterChange($event)">
+                            <option value="">All</option>
+                            <option value="c">Type</option>
+                            <option value="g">Glass</option>
+                            <option value="i">Ingredient</option>
+                            <option value="a">Alcoholic</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-4">
+                <div class="categories__search">
+                    <div class="categories__search-label">Search by name</div>
+                    <div class="categories__search-input">
+                        <input class="input" type="text" placeholder="Category name" (input)="onSearchChange($event)">
+                        <div class="categories__search-icon">
+                            <fa-icon [icon]="faSearch"></fa-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="categories__section__items">
-            <div class="categories__section__item" *ngFor="let category of filteredCategories | paginate: { itemsPerPage: 20, currentPage: p }" 
-            (click)="onShowDrinksClick(category.name, category.subcategoryKey)">
-                <div class="categories__section__item-col">
+        <div class="categories__items" *ngIf="filteredCategories.length > 0">
+            <div class="categories__item" *ngFor="let category of filteredCategories | paginate: { itemsPerPage: 15, currentPage: p }" (click)="onShowDrinksClick(category.name, category.subcategoryKey)">
+                <div class="categories__item-col">
                     {{category.name}}
                 </div>
-                <div class="categories__section__item-col">
+                <div class="categories__item-col">
                     <span class="tag is-light">{{category.subcategoryName}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="categories__items"  *ngIf="filteredCategories.length == 0">
+            <div class="categories__item">
+                <div class="categories__item-col">
+                    Categories not found
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
+import { SearchResultInterface } from './../../interfaces/SearchResult';
 import { Component, OnInit } from '@angular/core';
-import { DrinkInterface } from '../../interfaces/Drink';
 
 @Component({
   selector: 'search',
@@ -8,13 +8,15 @@ import { DrinkInterface } from '../../interfaces/Drink';
 })
 export class SearchComponent implements OnInit {
   title = 'drinkify';
-  drinks = [] as DrinkInterface[];
+  searchResult: SearchResultInterface;
 
-  constructor() {}
+  constructor() {
+    this.searchResult = { done: false, drinks: [] };
+  }
 
   ngOnInit(): void {}
 
-  drinksEventEmit(newDrinks: Array<DrinkInterface>) {
-    this.drinks = newDrinks;
+  drinksEventEmit(searchResult: SearchResultInterface) {
+    this.searchResult = searchResult;
   }
 }
