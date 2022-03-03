@@ -17,7 +17,9 @@ const routes: Routes = [
     component: CategoriesDetailComponent,
   },
   {
-  { path:'drink-detail/:idDrink',
+    path: 'drink-detail/:idDrink',
+    component: DrinkDetailComponent,
+  },
 ];
 
 @NgModule({
