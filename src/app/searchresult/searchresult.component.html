@@ -1,13 +1,26 @@
-<div class="results" *ngIf="drinks.length > 0">
-    <div class="results__item" *ngFor="let drink of drinks">
-        <div class="results__item-name-with-image">
-           <img class="results__item-image" src="{{drink.strDrinkThumb}}" alt="{{drink.strDrink}}">
-           <div class="results__item-name">
-                <p>{{drink.strDrink}}</p>
+<div class="results" [ngClass]="{'results--active': searchResult.done}">
+    <div class="result__items" *ngIf="searchResult.drinks !==null">
+        <div class="results__item" *ngFor="let drink of searchResult.drinks" (click)="onShowDetailClick(drink.idDrink)">
+            <div class="results__item-name-with-image">
+               <img class="results__item-image" src="{{drink.strDrinkThumb}}" alt="{{drink.strDrink}}">
+               <div class="results__item-name">
+                    <p>{{drink.strDrink}}</p>
+                </div>
+            </div>
+            <div class="results__item-tags">
+                <span class="tag is-light" *ngIf="drink.strAlcoholic">{{drink.strAlcoholic}}</span>
+                <span class="tag is-light" *ngIf="drink.strCategory">{{drink.strCategory}}</span>
+                <span class="tag is-light" *ngIf="drink.strGlass">{{drink.strGlass}}</span>
             </div>
         </div>
-        <div class="results__item-cta">
-            <button class="button is-primary" (click)="onShowDetailClick(drink.idDrink)">See recipe</button>
+    </div>
+    <div class="results__items" *ngIf="searchResult.drinks === null">
+        <div class="results__item">
+            <div class="results__item-name-with-image">
+                <div class="results__item-name">
+                    <p>No results found</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>

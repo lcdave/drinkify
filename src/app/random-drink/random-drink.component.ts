@@ -27,4 +27,10 @@ export class RandomDrinkComponent implements OnInit {
 
     return data.drinks;
   }
+
+  onDrinkChangeClick() {
+    this.getRandomDrink().then((drinks) => {
+      this.drink = drinks[0];
+    });
+  }
 }

@@ -20,6 +20,10 @@ const routes: Routes = [
     path: 'drink-detail/:idDrink',
     component: DrinkDetailComponent,
   },
+  {
+    path: 'random-drink',
+    component: RandomDrinkComponent,
+  },
 ];
 
 @NgModule({

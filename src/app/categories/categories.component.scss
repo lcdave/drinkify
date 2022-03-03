@@ -1,61 +1,84 @@
 @import "variables";
 
 .categories {
-  &__section {
-    &__items {
-      background-color: $green-medium;
-      margin-bottom: 20px;
-      border-radius: 13px;
-      cursor: pointer;
+  &__items {
+    background-color: $green-medium;
+    margin-bottom: 20px;
+    border-radius: 13px;
+    cursor: pointer;
+  }
+
+  &__item {
+    display: flex;
+    border-bottom: 1px solid $grey-medium;
+    padding: 12px 25px;
+
+    &:first-child {
+      &:hover {
+        border-top-left-radius: 13px;
+        border-top-right-radius: 13px;
+      }
     }
 
-    &__item {
-      display: flex;
-      border-bottom: 1px solid $grey-medium;
-      padding: 10px 15px;
-
-      &:first-child {
-        &:hover {
-          border-top-left-radius: 13px;
-          border-top-right-radius: 13px;
-        }
-      }
-
-      &:last-child {
-        &:hover {
-          border-bottom-left-radius: 13px;
-          border-bottom-right-radius: 13px;
-        }
-      }
-
+    &:last-child {
       &:hover {
-        background-color: $green-darkest;
+        border-bottom-left-radius: 13px;
+        border-bottom-right-radius: 13px;
+      }
+    }
+
+    &:hover {
+      background-color: $green-darkest;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &-col {
+      flex: 1;
+
+      &--title {
+        font-weight: $weight-bold;
+        color: $green;
+      }
+
+      &--placeholder {
+        visibility: hidden;
       }
 
       &:last-child {
-        border-bottom: none;
-      }
-
-      &-col {
-        flex: 1;
-
-        &--title {
-          font-weight: $weight-bold;
-          color: $green;
-        }
-
-        &--placeholder {
-          visibility: hidden;
-        }
-
-        &:last-child {
-          flex: none;
-        }
+        flex: none;
       }
     }
   }
 
-  &__select {
+  &__filter {
     margin-bottom: 20px;
+  }
+
+  &__select-label,
+  &__search-label {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+
+  &__search {
+    &-input {
+      position: relative;
+      display: flex;
+      align-items: center;
+      input {
+        padding-left: 40px;
+      }
+    }
+    &-icon {
+      position: absolute;
+      left: 13px;
+
+      .ng-fa-icon {
+        color: $grey-medium;
+      }
+    }
   }
 }
