@@ -1,8 +1,7 @@
 export interface DrinkInterface {
   strDrink: string;
   strDrinkThumb: string;
-  strInstructions: string;
-  strCategory: string;
+  idDrink: string;
   strIngredient1: string;
   strIngredient2: string;
   strIngredient3: string;
@@ -18,6 +17,9 @@ export interface DrinkInterface {
   strIngredient13: string;
   strIngredient14: string;
   strIngredient15: string;
+
+  strInstructions: string;
+  
   strMeasure1: string;
   strMeasure2: string;
   strMeasure3: string;
@@ -33,4 +35,6 @@ export interface DrinkInterface {
   strMeasure13: string;
   strMeasure14: string;
   strMeasure15: string;
+
+
 }

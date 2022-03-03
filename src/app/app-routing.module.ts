@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SearchComponent } from './search/search.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoriesDetailComponent } from './categories-detail/categories-detail.component';
+import { DrinkDetailComponent } from './drink-detail/drink-detail.component';
 import { RandomDrinkComponent } from './random-drink/random-drink.component';
 
 const routes: Routes = [
@@ -16,9 +17,7 @@ const routes: Routes = [
     component: CategoriesDetailComponent,
   },
   {
-    path: 'random-drink',
-    component: RandomDrinkComponent,
-  },
+  { path:'drink-detail/:idDrink',
 ];
 
 @NgModule({
@@ -30,5 +29,6 @@ export const routingComponents = [
   CategoriesComponent,
   CategoriesDetailComponent,
   SearchComponent,
+  DrinkDetailComponent,
   RandomDrinkComponent,
 ];
