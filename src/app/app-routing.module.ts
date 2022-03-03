@@ -4,6 +4,7 @@ import { SearchComponent } from './search/search.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoriesDetailComponent } from './categories-detail/categories-detail.component';
 import { DrinkDetailComponent } from './drink-detail/drink-detail.component';
+import { RandomDrinkComponent } from './random-drink/random-drink.component';
 
 const routes: Routes = [
   { path: '', component: SearchComponent },
@@ -15,9 +16,8 @@ const routes: Routes = [
     path: 'categories/:subcategory/:name',
     component: CategoriesDetailComponent,
   },
+  {
   { path:'drink-detail/:idDrink',
-    component: DrinkDetailComponent
-  },
 ];
 
 @NgModule({
@@ -30,4 +30,5 @@ export const routingComponents = [
   CategoriesDetailComponent,
   SearchComponent,
   DrinkDetailComponent,
+  RandomDrinkComponent,
 ];
