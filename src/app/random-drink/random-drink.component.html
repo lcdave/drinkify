@@ -1,0 +1,74 @@
+<div class="detaul__item-ingredients">
+    <p>{{drink.strDrink}}</p>
+    <div class="detail__item-ingredients-with-image" >
+        Ingredients:
+        <div class="detail__item-ingredients-row"*ngIf="drink.strIngredient1" >
+            <div class="detail__item-ingredients-column">{{drink.strMeasure1}}</div>
+            <div class="detail__item-ingredients-column">{{drink.strIngredient1}}</div>                     
+        </div>
+        <div class="detail__item-ingredients-row"*ngIf="drink.strIngredient2!='null'" >
+            <div class="detail__item-ingredients-column">{{drink.strMeasure2}}</div>
+            <div class="detail__item-ingredients-column">{{drink.strIngredient2}}</div>                     
+        </div>
+        <div class="detail__item-ingredients-row"*ngIf="drink.strIngredient3!='null'" >
+            <div class="detail__item-ingredients-column">{{drink.strMeasure3}}</div>
+            <div class="detail__item-ingredients-column">{{drink.strIngredient3}}</div>                     
+        </div>
+        <div class="detail__item-ingredients-row"*ngIf="drink.strIngredient4!='null'" >
+            <div class="detail__item-ingredients-column">{{drink.strMeasure4}}</div>
+            <div class="detail__item-ingredients-column">{{drink.strIngredient4}}</div>                     
+        </div>
+        <div class="detail__item-ingredients-row"*ngIf="drink.strIngredient5!='null'" >
+            <div class="detail__item-ingredients-column">{{drink.strMeasure5}}</div>
+            <div class="detail__item-ingredients-column">{{drink.strIngredient5}}</div>                     
+        </div>
+        <div class="detail__item-ingredients-row"*ngIf="drink.strIngredient6" >
+            <div class="detail__item-ingredients-column">{{drink.strMeasure6}}</div>
+            <div class="detail__item-ingredients-column">{{drink.strIngredient6}}</div>                     
+        </div>
+        <div class="detail__item-ingredients-row"*ngIf="drink.strIngredient7!='null'" >
+            <div class="detail__item-ingredients-column">{{drink.strMeasure7}}</div>
+            <div class="detail__item-ingredients-column">{{drink.strIngredient7}}</div>                     
+        </div>
+        <div class="detail__item-ingredients-row"*ngIf="drink.strIngredient8!='null'" >
+            <div class="detail__item-ingredients-column">{{drink.strMeasure8}}</div>
+            <div class="detail__item-ingredients-column">{{drink.strIngredient8}}</div>                     
+        </div>
+        <div class="detail__item-ingredients-row"*ngIf="drink.strIngredient9!='null'" >
+            <div class="detail__item-ingredients-column">{{drink.strMeasure9}}</div>
+            <div class="detail__item-ingredients-column">{{drink.strIngredient9}}</div>                     
+        </div>
+        <div class="detail__item-ingredients-row"*ngIf="drink.strIngredient10!='null'" >
+            <div class="detail__item-ingredients-column">{{drink.strMeasure10}}</div>
+            <div class="detail__item-ingredients-column">{{drink.strIngredient10}}</div>                     
+        </div>
+        <div class="detail__item-ingredients-row"*ngIf="drink.strIngredient11!='null'" >
+            <div class="detail__item-ingredients-column">{{drink.strMeasure11}}</div>
+            <div class="detail__item-ingredients-column">{{drink.strIngredient11}}</div>                     
+        </div>
+        <div class="detail__item-ingredients-row"*ngIf="drink.strIngredient12!='null'" >
+            <div class="detail__item-ingredients-column">{{drink.strMeasure12}}</div>
+            <div class="detail__item-ingredients-column">{{drink.strIngredient12}}</div>                     
+        </div>
+        <div class="detail__item-ingredients-row"*ngIf="drink.strIngredient13!='null'" >
+            <div class="detail__item-ingredients-column">{{drink.strMeasure13}}</div>
+            <div class="detail__item-ingredients-column">{{drink.strIngredient13}}</div>                     
+        </div>
+        <div class="detail__item-ingredients-row"*ngIf="drink.strIngredient14!='null'" >
+            <div class="detail__item-ingredients-column">{{drink.strMeasure14}}</div>
+            <div class="detail__item-ingredients-column">{{drink.strIngredient14}}</div>                     
+        </div>
+        <div class="detail__item-ingredients-row"*ngIf="drink.strIngredient15!='null'" >
+            <div class="detail__item-ingredients-column">{{drink.strMeasure15}}</div>
+            <div class="detail__item-ingredients-column">{{drink.strIngredient15}}</div>                     
+        </div>
+    </div>
+        <div class="detail__item-instructions">
+            Instructions:
+            <div class="detail__item-instructions-detail">
+                {{drink.strInstructions}}
+            </div>
+
+        </div>   
+</div>
+<img class="detail__item-image" src="{{drink.strDrinkThumb}}" alt="{{drink.strDrink}}">

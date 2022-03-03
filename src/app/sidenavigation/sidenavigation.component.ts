@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { faHome, faGlassMartini } from '@fortawesome/free-solid-svg-icons';
+import {
+  faHome,
+  faGlassMartini,
+  faDiceSix,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'sidenavigation',
@@ -10,11 +14,13 @@ export class SidenavigationComponent implements OnInit {
   title: string;
   faHome: any;
   faGlassMartini: any;
+  faDiceSix: any;
 
   constructor() {
     this.title = 'DRINKIFY';
     this.faHome = faHome;
     this.faGlassMartini = faGlassMartini;
+    this.faDiceSix = faDiceSix;
   }
 
   ngOnInit(): void {}
