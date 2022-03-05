@@ -1,29 +1,66 @@
 @import "variables";
 
 .results {
-  width: 70%;
+  width: 60%;
   margin: 0 auto;
+  border-bottom-right-radius: 13px;
+  border-bottom-left-radius: 13px;
+  background-color: $green-medium;
+  max-height: 0;
+  overflow: auto;
+  transition: max-height 0.15s ease-out;
+  box-shadow: 1px 10px 24px -7px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 10px 24px -7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 10px 24px -7px rgba(0, 0, 0, 0.75);
 
-    &__item {
+  &--active {
+    max-height: 500px;
+    transition: max-height 0.25s ease-in;
+    border-top: 1px solid $grey-medium;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-top: 1px solid $grey-medium;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $green-darkest;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &-name-with-image {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      margin-bottom: 20px;
+    }
 
-      &-name-with-image {
-        display: flex;
-        align-items: center;
+    &-name {
+      color: $white;
+      font-size: 20px;
+    }
+
+    &-image {
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      margin-right: 40px;
+    }
+
+    &-tags {
+      .tag {
+        margin-right: 10px;
+        font-size: 13px;
+
+        &:last-child {
+          margin-right: 0;
+        }
       }
-
-      &-name {
-          color: $white;
-      }
-
-      &-image{
-        border-radius: 50%;
-        width:70px;
-        height:70px;
-        margin-right: 20px;
     }
   }
 }

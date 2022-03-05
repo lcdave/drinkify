@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DrinkInterface } from '../../interfaces/Drink';
+import { SearchResultInterface } from './../../interfaces/SearchResult';
 
 @Component({
   selector: 'searchresult',
@@ -8,19 +8,13 @@ import { DrinkInterface } from '../../interfaces/Drink';
   styleUrls: ['./searchresult.component.scss'],
 })
 export class SearchresultComponent implements OnInit {
-  @Input() drinks = [] as Array<DrinkInterface>;
+  @Input() searchResult = {} as SearchResultInterface;
 
-  constructor(private router:Router){
-    
-  }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
-
-
-onShowDetailClick(idDrink:String){
-  console.log(idDrink);
-  this.router.navigate(['/drink-detail',idDrink]);
-
-}
+  onShowDetailClick(idDrink: String) {
+    this.router.navigate(['/drink-detail', idDrink]);
+  }
 }

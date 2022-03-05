@@ -1,6 +1,9 @@
 
     <div class="search">
         <div class="search__bar" ng-app="searchfieldApp" ng-controller="serchfieldCtrl">
-            <input class="input" type="text" placeholder="Please enter the drink's name..." [formControl]="name" >
+            <div class="search__icon">
+                <fa-icon [icon]="faSearch"></fa-icon>
+            </div>
+            <input [classList]="inputClass" placeholder="Please enter the drink's name..." [formControl]="name">
         </div>
     </div>
