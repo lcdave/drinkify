@@ -36,4 +36,7 @@ export class CategoriesDetailComponent implements OnInit {
 
     return data.drinks;
   }
+  onShowDetailClick(idDrink: String) {
+    this.router.navigate(['/drink-detail', idDrink]);
+  }
 }
