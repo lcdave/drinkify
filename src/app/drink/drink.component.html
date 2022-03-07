@@ -6,8 +6,8 @@
             <div class="drink__image">
                 <img src="{{drink.strDrinkThumb}}" alt="{{drink.strDrink}}">
             </div>
-            <div class="columns">
-                <div class="column">
+            <div class="columns is-multiline">
+                <div class="column is-5-desktop is-12-tablet">
                     <div class="drink__ingredients">
                         <div class="drink__ingredient"*ngIf="drink.strIngredient1">
                             <fa-icon [icon]="faGlassMartiniAlt"></fa-icon>
@@ -86,7 +86,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="column">
+                <div class="column is-6-desktop is-12-tablet">
                     <div class="drink__instructions">
                         <div class="drink__instructions-title">
                             <h3 class="title is-3 has-text-white">Instructions</h3>

@@ -29,6 +29,10 @@
   }
 
   &__instructions {
+    @media (max-width: $desktop) {
+      margin-bottom: 40px;
+    }
+
     &-title {
       margin-bottom: 20px;
     }
@@ -67,7 +71,7 @@
   .column {
     margin-right: 50px;
 
-    @media screen and (max-width: 768px) {
+    @media (max-width: 768px) {
       margin-right: 0;
     }
 

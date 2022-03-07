@@ -1,0 +1,21 @@
+<nav class="navbar topnavigation" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a routerLink="/" routerLinkActive="active" class="navbar-item" (click)="isActive = false">
+       Drinkify
+      </a>
+  
+      <a role="button" class="navbar-burger" [ngClass]="{'is-active': isActive}" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" (click)="toggleMenu()">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navbarBasicExample" class="navbar-menu" [ngClass]="{'is-active': isActive}">
+      <div class="navbar-start">
+        <a routerLink="/" routerLinkActive="active" class="navbar-item" (click)="isActive = false">Home</a>
+        <a routerLink="/categories" routerLinkActive="active" class="navbar-item" (click)="isActive = false">Categories</a>
+        <a routerLink="/random-drink" routerLinkActive="active" class="navbar-item" (click)="isActive = false">Random Drink</a>
+      </div>
+    </div>
+  </nav>

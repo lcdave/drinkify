@@ -15,6 +15,7 @@ import { CategoriesDetailComponent } from './categories-detail/categories-detail
 import { RandomDrinkComponent } from './random-drink/random-drink.component';
 import { DrinkDetailComponent } from './drink-detail/drink-detail.component';
 import { DrinkComponent } from './drink/drink.component';
+import { TopnavigationComponent } from './topnavigation/topnavigation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +29,7 @@ import { DrinkComponent } from './drink/drink.component';
     DrinkDetailComponent,
     RandomDrinkComponent,
     DrinkComponent,
+    TopnavigationComponent,
   ],
   imports: [
     BrowserModule,

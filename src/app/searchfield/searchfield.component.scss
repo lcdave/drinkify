@@ -10,7 +10,7 @@
     align-items: center;
     position: relative;
 
-    @media screen and (min-width: $desktop) {
+    @media (min-width: $desktop) {
       width: 80%;
       max-width: 920px;
     }
