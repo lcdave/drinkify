@@ -1,7 +1,7 @@
 @import "variables";
 
 .results {
-  width: 60%;
+  width: 100%;
   margin: 0 auto;
   border-bottom-right-radius: 13px;
   border-bottom-left-radius: 13px;
@@ -13,6 +13,11 @@
   -webkit-box-shadow: 1px 10px 24px -7px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 1px 10px 24px -7px rgba(0, 0, 0, 0.75);
 
+  @media screen and (min-width: $desktop) {
+    width: 80%;
+    max-width: 920px;
+  }
+
   &--active {
     max-height: 500px;
     transition: max-height 0.25s ease-in;
@@ -20,12 +25,15 @@
   }
 
   &__item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 15px 30px;
     border-top: 1px solid $grey-medium;
     cursor: pointer;
+
+    @media screen and (min-width: $desktop) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
     &:hover {
       background-color: $green-darkest;
@@ -53,6 +61,12 @@
     }
 
     &-tags {
+      margin-left: 100px;
+
+      @media screen and (min-width: $desktop) {
+        margin-left: 0;
+      }
+
       .tag {
         margin-right: 10px;
         font-size: 13px;

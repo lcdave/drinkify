@@ -9,6 +9,10 @@
   width: 140px;
   background: $grey;
 
+  @media screen and (max-width: $tablet) {
+    display: none;
+  }
+
   &__logo {
     width: 74px;
     margin: 0 auto;
