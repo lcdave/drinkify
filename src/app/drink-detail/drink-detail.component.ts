@@ -1,33 +1,36 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { DrinkInterface } from '../../interfaces/Drink';
+import {
+  faGlassMartiniAlt,
+  faLongArrowAltLeft,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-drink-detail',
   templateUrl: './drink-detail.component.html',
-  styleUrls: ['./drink-detail.component.scss']
+  styleUrls: ['./drink-detail.component.scss'],
 })
 export class DrinkDetailComponent implements OnInit {
-  id :string |null;
+  id: string | null;
   apiURL: string;
-  drinks: Array<DrinkInterface>=[];
-  
-  
-  
+  drinks: Array<DrinkInterface> = [];
+  faGlassMartiniAlt: any;
+  faLongArrowAltLeft: any;
 
-
-  constructor(private router: Router, private route: ActivatedRoute) {    
+  constructor(private route: ActivatedRoute) {
     this.id = this.route.snapshot.paramMap.get('idDrink');
     this.apiURL = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
-   
+    this.faGlassMartiniAlt = faGlassMartiniAlt;
+    this.faLongArrowAltLeft = faLongArrowAltLeft;
   }
 
   ngOnInit(): void {
-    
     let apiURLWithSearchString = this.apiURL + String(this.id);
     this.setDrinkDetail(apiURLWithSearchString);
   }
-  async setDrinkDetail(url:string){
+
+  async setDrinkDetail(url: string) {
     await fetch(url).then((response) => {
       if (response.status !== 200) {
         console.log(
@@ -38,14 +41,11 @@ export class DrinkDetailComponent implements OnInit {
       response.json().then((data) => {
         console.log(data);
         this.drinks = data.drinks;
-        
-
-        
-        
       });
     });
   }
 
-  
-
+  onBackClick() {
+    window.history.back();
+  }
 }

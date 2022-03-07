@@ -97,7 +97,6 @@ export class CategoriesComponent implements OnInit {
     } else {
       this.filteredCategories = this.categories;
     }
-    console.log('asdf');
     this.filteredCategoriesBeforeSearch = this.filteredCategories;
   }
 

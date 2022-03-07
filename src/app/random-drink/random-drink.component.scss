@@ -1,0 +1,80 @@
+@import "variables";
+
+.drink-detail {
+  .drink {
+    h2 {
+      margin-bottom: 40px !important;
+    }
+
+    &__ingredients {
+      margin-bottom: 40px;
+    }
+
+    &__ingredient {
+      border-bottom: 1px solid $green-darkest;
+      padding: 15px 0;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .ng-fa-icon {
+        margin-right: 15px;
+        color: $green;
+      }
+
+      &-measure,
+      &-label {
+        display: inline;
+      }
+    }
+
+    &__instructions {
+      &-title {
+        margin-bottom: 20px;
+      }
+
+      &-text {
+        font-size: 18px;
+      }
+    }
+
+    &__image {
+      margin-bottom: 40px;
+
+      img {
+        max-width: 300px;
+        border-radius: 50%;
+      }
+    }
+
+    &__back {
+      a {
+        display: block;
+        color: $white;
+        font-size: 16px;
+        margin-bottom: 30px;
+
+        &:hover {
+          color: $green;
+        }
+
+        .ng-fa-icon {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  .column {
+    margin-right: 50px;
+
+    @media screen and (max-width: 768px) {
+      margin-right: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

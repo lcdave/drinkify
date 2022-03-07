@@ -1,8 +1,13 @@
 @import "variables";
 
 main {
-  margin-left: 112px;
-  padding: 16px 56px;
+  margin-left: 0;
+  padding: 16px;
   background-color: $green-grey;
   min-height: 100vh;
+
+  @media screen and (min-width: $tablet) {
+    margin-left: 112px;
+    padding: 16px 56px;
+  }
 }

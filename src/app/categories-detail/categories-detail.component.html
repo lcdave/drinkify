@@ -14,7 +14,7 @@
             <div class="drinks-list__item-name">
                 {{drink.strDrink}}
             </div>
-            <div class="drinks-list__item-cta">
+            <div class="drinks-list__item-cta" (click)="onShowDetailClick(drink.idDrink)">
                 Details
             </div>
         </div>
