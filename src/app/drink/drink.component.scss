@@ -51,23 +51,6 @@
     }
   }
 
-  &__back {
-    a {
-      display: block;
-      color: $white;
-      font-size: 16px;
-      margin-bottom: 30px;
-
-      &:hover {
-        color: $green;
-      }
-
-      .ng-fa-icon {
-        margin-right: 10px;
-      }
-    }
-  }
-
   .column {
     margin-right: 50px;
 

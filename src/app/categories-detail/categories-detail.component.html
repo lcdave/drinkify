@@ -7,14 +7,14 @@
         </a>
     </div>
     <div class="drinks-list">
-        <div class="drinks-list__item" *ngFor="let drink of drinks | paginate: { itemsPerPage: 15, currentPage: p }">
+        <div class="drinks-list__item" *ngFor="let drink of drinks | paginate: { itemsPerPage: 15, currentPage: p }" (click)="onShowDetailClick(drink.idDrink)">
             <div class="drinks-list__item-image">
                 <img src="{{drink.strDrinkThumb}}" alt="{{drink.strDrink}}">
             </div>
             <div class="drinks-list__item-name">
                 {{drink.strDrink}}
             </div>
-            <div class="drinks-list__item-cta" (click)="onShowDetailClick(drink.idDrink)">
+            <div class="drinks-list__item-cta">
                 Details
             </div>
         </div>

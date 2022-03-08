@@ -47,23 +47,6 @@
         border-radius: 50%;
       }
     }
-
-    &__back {
-      a {
-        display: block;
-        color: $white;
-        font-size: 16px;
-        margin-bottom: 30px;
-
-        &:hover {
-          color: $green;
-        }
-
-        .ng-fa-icon {
-          margin-right: 10px;
-        }
-      }
-    }
   }
 
   .column {
@@ -75,6 +58,23 @@
 
     &:last-child {
       margin-right: 0;
+    }
+  }
+}
+
+.back-link {
+  a {
+    display: block;
+    color: $white;
+    font-size: 16px;
+    margin-bottom: 30px;
+
+    &:hover {
+      color: $green;
+    }
+
+    .ng-fa-icon {
+      margin-right: 10px;
     }
   }
 }

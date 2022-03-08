@@ -26,16 +26,14 @@ export class CategoriesDetailComponent implements OnInit {
   }
 
   async getDrinksByCategory(): Promise<CategoryDrinkInterface[]> {
-    // TODO(davide): snailcase name before concat
     let apiURL = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?${this.subcategory}=${this.name}`;
 
     const response = await fetch(apiURL);
     const data = await response.json();
 
-    console.log(data);
-
     return data.drinks;
   }
+
   onShowDetailClick(idDrink: String) {
     this.router.navigate(['/drink-detail', idDrink]);
   }

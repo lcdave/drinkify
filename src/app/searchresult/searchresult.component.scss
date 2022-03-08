@@ -63,6 +63,10 @@
     &-tags {
       margin-left: 100px;
 
+      @media (max-width: 480px) {
+        display: none;
+      }
+
       @media (min-width: $desktop) {
         margin-left: 0;
       }
