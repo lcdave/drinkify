@@ -2,12 +2,12 @@
 
 main {
   margin-left: 0;
-  padding: 16px;
+  padding: 15px 25px;
   background-color: $green-grey;
   min-height: 100vh;
 
-  @media screen and (min-width: $tablet) {
-    margin-left: 112px;
+  @media (min-width: $desktop) {
+    margin-left: 132px;
     padding: 16px 56px;
   }
 }

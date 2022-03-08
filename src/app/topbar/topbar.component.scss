@@ -4,8 +4,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 9px 0 80px 0;
+  margin: 9px 0 40px 0;
   color: $white;
+
+  @media (min-width: $desktop) {
+    margin: 9px 0 80px 0;
+  }
 
   &__greeting {
     font-size: 24px;

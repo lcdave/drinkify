@@ -9,7 +9,7 @@
   width: 140px;
   background: $grey;
 
-  @media screen and (max-width: $tablet) {
+  @media (max-width: $desktop) {
     display: none;
   }
 
