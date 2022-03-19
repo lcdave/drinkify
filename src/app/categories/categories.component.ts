@@ -87,6 +87,7 @@ export class CategoriesComponent implements OnInit {
   }
 
   onFilterChange(event: Event): void {
+    this.p = 1;
     let filter = event.target as HTMLSelectElement;
     let selected = filter.value;
 
