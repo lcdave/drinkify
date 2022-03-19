@@ -17,6 +17,12 @@
     width: 74px;
     margin: 0 auto;
     color: $green;
+
+    a {
+      &:hover {
+        color: $green;
+      }
+    }
   }
 
   &__cta {
